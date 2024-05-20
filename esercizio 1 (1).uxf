@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>513</x>
+      <y>333</y>
+      <w>252</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..N_MAX_PRENOTAZIONI
+- elecoPrenotazioni:Prenotazione[ ]</panel_attributes>
+    <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>27</x>
+      <y>225</y>
+      <w>495</w>
+      <h>414</h>
+    </coordinates>
+    <panel_attributes>Prenotazione
+--
+- nome:String
+- data:LocalDate
+- ora:LocalTime
+- dataOra:LocalDateTime
+- allergie:String
+- tipologia: String
+- cucina: String
+- idPrenotazione : int
+--
++ Prenotazione (nome:String,data:LocalDate,ora:LocalTime,dataOra:LocalDateTime
+,allergie:String,tipologia: String,cucina: String,idPrenotazione : int)
++ Prenotazione (prenotazione:Prenotazione)
++ getNome():String
++ getData():String
++ getOra():float
++ getAllergie():float
++ getTipologia():String
++ getCucina():String
++ getIdPrenotazione():int
++ setNome(nome:String)
++ setData(nazionalita:String)
++ setOra(lunghezza:float)
++ setAllergie(stazza:float)
++ setTipologia(tipologia:String)
++ setCucina(cucina:String)
++ setIdPrenotazione(idPrenotazione:int)
++ toString():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>747</x>
+      <y>234</y>
+      <w>387</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>Ristorante
+--
+- N_MAX_PRENOTAZIONI:int = 10
+- nPrenotazioniPresenti:int
+--
++ Ristorante()
++ aggiungiPrenotazione(prenotazione:Prenotazione):int
++ stampaPrenotazione(int posizione): String //restiuisce una 
+                             //stringa che poi verrà stampata nella main class
++ ricercaPrenotazione(String nome): String
++ getPrenotazione (int posizione):Prenotazione
++ modificaPrenotazione(String nome,int idPrenotazione):int
++ eliminaPrenotazione(int idPrenotazione):int
++ ordinaNome(String nome):Prenotazione[]
++ salvaSuFile()
++ apriDaFile()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>18</y>
+      <w>630</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>Il cameriere aggiunge una nuova prenotazione
+L’operatore ricerca una prenotazione stampa elemento
+L’operatore modifica il contenuto della prenotazione
+L’operatore elimina una prenotazione
+L’operatore ordina secondo un criterio le prenotazioni stampa
+Alla chiusura del programma i dati vengono esportati su file csv
+All’apertura il file csv viene letto 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
